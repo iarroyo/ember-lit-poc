@@ -1,0 +1,49 @@
+{{page-title 'Index'}}
+
+<div>
+  <div>Dummy example with rup-button web component</div>
+  <br />
+  {{! template-lint-disable no-inline-styles }}
+  <div style='display:flex'>
+    <span>Click on&NonBreakingSpace;</span>
+    <rup-button options={{this.button1}}></rup-button>
+    <span>&NonBreakingSpace;to display an alert dialog</span>
+  </div>
+  <br />
+  {{! template-lint-disable no-invalid-interactive }}
+  {{! template-lint-disable no-inline-styles }}
+  <div style='display:flex'>
+    <span>Click on&NonBreakingSpace;</span>
+    <rup-button
+      options={{this.model.button2}}
+      {{on 'click' this.handleClickButton2}}
+    ></rup-button>
+    <span>&NonBreakingSpace;to display a different value ->
+      {{this.value}}</span>
+  </div>
+</div>
+<hr />
+
+<div>
+  <div>Dummy example with rup-dialog web component</div>
+  <br />
+  <rup-dialog
+    {{did-insert this.refDialog}}
+    options={{this.dialogOptions}}
+  ></rup-dialog>
+
+  <label for='dialog-header'>Introduce the title of the dialog header: (if you
+    dont introduce any value by default the header title will be
+    <b>{{this.dialogOptions.header}}</b></label>
+  <div>
+    <input id='dialog-header' {{on 'input' this.setDialogHeader}} />
+  </div>
+  <br />
+  <span>Now open the dialog to see the header value</span>
+  {{! template-lint-disable no-invalid-interactive }}
+  <rup-button
+    options={{this.openDialogButton}}
+    {{on 'click' this.onOpenDialog}}
+  ></rup-button>
+
+</div>

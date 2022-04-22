@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Library Lit Element Simple Starter Kit</title>
+</head>
+<body>
+    <div style="display: flex; gap: 20px;">
+        <div>
+            <div>Sample Button</div>
+            <rup-button></rup-button>
+        </div>
+        <div>
+            <div>Sample Dialog</div>
+            <div style="display:flex">
+                <rup-button id="openButton"></rup-button>
+            </div>
+            <rup-dialog></rup-dialog>
+        </div>
+    </div>
+    <script type="module" src="/src/index.ts"></script>
+    <script>
+        const button = document.querySelector("rup-button");
+        button.options = {
+            label: 'sample',
+            action: () => console.log('it works')
+        }
+        const dialog = document.querySelector('rup-dialog');
+        dialog.options = {
+            header: 'Dialog sample',
+             //isOpen: true,
+            action: () => console.log('it was closed')
+        }
+        const openButton = document.querySelector('rup-button#openButton');
+
+        openButton.options = {
+            label: 'Open Dialog',
+            action: () =>  { 
+                dialog.showModal()
+            }
+        }
+    </script>
+</body>
+</html>
