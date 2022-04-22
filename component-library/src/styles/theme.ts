@@ -6,10 +6,10 @@ import { css } from 'lit';
  */
 export let theme = css`
   :host {
-    --color-primary: #4287f5;
+    --color-primary: #1479cc;
     --color-secondary: #9f40f7;
 
-    --color-background: #f9f9f9;
+    --color-background: #d6edff;
     --color-on-background: #535353;
 
     --color-surface: #ffffff;
