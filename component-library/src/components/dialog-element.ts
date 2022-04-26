@@ -43,7 +43,6 @@ export class RupDialog extends LitElement {
   }
 
   render() {
-    console.log(this.options.isOpen)
     return this.options ? html`
     <dialog id='dialog' open=${ifDefined(this.options.isOpen? this.options.isOpen: undefined)} @click=${this.handleClick}>
       <div id="dialogContainer">

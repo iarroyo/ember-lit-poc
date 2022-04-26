@@ -94,10 +94,10 @@ var n$1;
 ((n$1 = window.HTMLSlotElement) === null || n$1 === void 0 ? void 0 : n$1.prototype.assignedElements) != null ? (o2, n2) => o2.assignedElements(n2) : (o2, n2) => o2.assignedNodes(n2).filter((o3) => o3.nodeType === Node.ELEMENT_NODE);
 let theme = css`
   :host {
-    --color-primary: #4287f5;
+    --color-primary: #1479cc;
     --color-secondary: #9f40f7;
 
-    --color-background: #f9f9f9;
+    --color-background: #d6edff;
     --color-on-background: #535353;
 
     --color-surface: #ffffff;
@@ -117,15 +117,43 @@ var __decorateClass$1 = (decorators, target, key, kind) => {
 };
 let RupButton = class extends LitElement {
   render() {
-    return this.options ? html`<button @click=${this.options.action}>${this.options.label}</button>` : "";
+    return this.options ? html`<button type='button' @click=${this.options.action}>${this.options.label}</button>` : "";
   }
 };
 RupButton.styles = [
   theme,
   css`
-      :host {
-        display: block;
+      button {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border-radius: .25rem;
+        font-weight: 400;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        transition-property: background-color,border-color,color,fill,stroke;
+        transition-duration: .2s;
+        cursor: pointer;
+        outline: 0;
+        display: inline-flex;
+        padding: 0 .75rem;
+        height: 2rem;
+        line-height: calc(2rem - 2px);
+        min-width: 60px;
+        border: 1px solid var(--color-primary);
         color: var(--color-primary);
+        background-color: transparent
+      }
+      button:hover{
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        background-color: var(--color-background)
       }
     `
 ];
