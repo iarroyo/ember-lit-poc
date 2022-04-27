@@ -7,6 +7,9 @@ export default class IndexController extends Controller {
   value = 'value';
 
   @tracked
+  inputValue = '';
+
+  @tracked
   dialogHeader = 'Sample Dialog Header';
 
   dialog;
@@ -52,5 +55,10 @@ export default class IndexController extends Controller {
   @action
   setDialogHeader({ target: input }) {
     this.dialogHeader = input.value;
+  }
+
+  @action
+  onInput(event) {
+    this.inputValue = event.target.value;
   }
 }
